@@ -56,5 +56,6 @@ $ java -jar openapi-generator-cli.jar -DbrowserClient=false -DapiTests=false -Dm
 You can view api spec in Swagger ui using docker image.
 
 ```bash
-docker run -d -p 81:8080 -v $HOME/git/swagger-dart-client/:/usr/share/nginx/html/ -e API_URL=petstore.yaml swaggerapi/swagger-ui
+$ docker run -d -p 81:8080 -v $HOME/git/swagger-dart-client/:/usr/share/nginx/html/ \
+  -e API_URL=petstore.yaml swaggerapi/swagger-ui
 ```
