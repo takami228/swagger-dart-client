@@ -43,3 +43,18 @@ $ ./codegen.sh build-dart2
 To Customize generated code, you could update mustache template files.
 
 Original mustache files are in [here](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources).
+
+You can also use [selective generation](https://openapi-generator.tech/docs/customization/#selective-generation).
+
+```sh
+$ java -jar openapi-generator-cli.jar -DbrowserClient=false -DapiTests=false -DmodelTests=false \
+  generate -i petstore.yaml -g dart -t template/dart2 -o build
+```
+
+## Appendix: View Api Spec in Swagger UI
+
+You can view api spec in Swagger ui using docker image.
+
+```bash
+docker run -d -p 81:8080 -v $HOME/git/swagger-dart-client/:/usr/share/nginx/html/ -e API_URL=petstore.yaml swaggerapi/swagger-ui
+```

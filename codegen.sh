@@ -7,7 +7,6 @@ BUILD_TYPE=${1}
 
 if [ ${BUILD_TYPE} = "clean" ]; then
   rm -rf build/*
-  rm -rf build/.*
 fi
 
 if [ ${BUILD_TYPE} = "build-dart" ]; then
